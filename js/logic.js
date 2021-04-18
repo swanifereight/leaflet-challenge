@@ -29,3 +29,20 @@ function styleInfo(feature) {
       weight: 0.5
     };
 }
+
+ function getColor(depth) {
+    switch (true) {
+    case depth > 90:
+      return "#ea2c2c";
+    case depth > 70:
+      return "#ea822c";
+    case depth > 50:
+      return "#ee9c00";
+    case depth > 30:
+      return "#eecc00";
+    case depth > 10:
+      return "#d4ee00";
+    default:
+      return "#98ee00";
+    }
+  }
