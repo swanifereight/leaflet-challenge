@@ -10,3 +10,10 @@ var maplayer = L.tileLayer(
     accessToken: API_KEY
   }
 );
+var map = L.map("mapID", {
+  center: [
+  40.7, 94.5],
+  zoom: 3
+});
+
+maplayer.addTo(map);
