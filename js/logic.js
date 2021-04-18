@@ -10,10 +10,11 @@ var maplayer = L.tileLayer(
     accessToken: API_KEY
   }
 );
-var map = L.map("mapID", {
+var map = L.map("mapid", {
   center: [
   40.7, 94.5],
   zoom: 3
 });
 
 maplayer.addTo(map);
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson")
