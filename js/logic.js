@@ -53,3 +53,43 @@ function styleInfo(feature) {
     }
     return magnitude * 4
   }
+
+  L.geoJson(data, {
+    pointToLayer: function(feature, latlng){
+      return L.circleMarker(latlng);
+},
+
+style: styleInfo,
+  onEachFeature:function(feature, layer){
+      layer.bindPopup(
+        "Magnitude:"
+        + feature.properties.mag
+        + "<br>Depth: "
+        + feature.geometry.coordinates[2]
+        + "<br>Location: "
+        + feature.properties.place
+      );
+    }
+    
+  }).addTo(map);
+
+  var legend = L.control({
+    position: "bottomright"
+  });
+
+
+
+legend.onAdd = function() {
+    var div = L.DomUtil.create("div", "info legend");
+
+    var grades = [-10, 10, 30, 50, 70, 90];
+    var colors = [
+      "#98ee00",
+      "#d4ee00",
+      "#eecc00",
+      "#ee9c00",
+      "#ea822c",
+      "#ea2c2c"
+    ];
+
+   
