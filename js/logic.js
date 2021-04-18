@@ -46,3 +46,10 @@ function styleInfo(feature) {
       return "#98ee00";
     }
   }
+
+  function getRadius(magnitude){
+    if (magnitude === 0){
+      return 1;
+    }
+    return magnitude * 4
+  }
